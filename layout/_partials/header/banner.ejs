@@ -3,11 +3,19 @@ var banner_img = page.banner_img || theme.index.banner_img
 var banner_img_height = parseFloat(page.banner_img_height || theme.index.banner_img_height)
 var banner_mask_alpha = parseFloat(page.banner_mask_alpha || theme.index.banner_mask_alpha)
 var subtitle = page.subtitle || page.title
+var use_webgl_bg = theme.webgl_fluid_bg && theme.webgl_fluid_bg.enable
 %>
 
-<div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>
+<% if (use_webgl_bg) { %>
+<div id="banner" class="banner" <%- theme.banner && theme.banner.parallax ? 'parallax=true' : '' %>>
+  <!-- WebGL流体背景 -->
+  <canvas id="fluid-background-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
+  <div class="full-bg-img" style="position: relative; z-index: 2;">
+<% } else { %>
+<div id="banner" class="banner" <%- theme.banner && theme.banner.parallax ? 'parallax=true' : '' %>
      style="background: url('<%- url_for(banner_img) %>') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
+<% } %>
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">

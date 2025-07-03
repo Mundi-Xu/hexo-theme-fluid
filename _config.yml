@@ -352,6 +352,62 @@ banner:
   # Minimum ratio of width to height, applicable to the vertical screen of mobile device, if you need to close it, set it to 0
   width_height_ratio: 1.0
 
+# WebGL流体背景配置
+# WebGL fluid background config
+webgl_fluid_bg:
+  enable: false
+
+  # 流体模拟参数
+  # Fluid simulation parameters
+  config:
+    # 模拟分辨率
+    # Simulation resolution
+    sim_resolution: 128
+    
+    # 染料分辨率
+    # Dye resolution  
+    dye_resolution: 1024
+    
+    # 密度消散率
+    # Density dissipation
+    density_dissipation: 1
+    
+    # 速度消散率
+    # Velocity dissipation
+    velocity_dissipation: 0.2
+    
+    # 压力
+    # Pressure
+    pressure: 0.8
+    
+    # 压力迭代次数
+    # Pressure iterations
+    pressure_iterations: 20
+    
+    # 涡度
+    # Curl
+    curl: 30
+    
+    # 颜色飞溅半径
+    # Splat radius
+    splat_radius: 0.25
+    
+    # 颜色飞溅力度
+    # Splat force
+    splat_force: 6000
+    
+    # 是否启用着色
+    # Enable shading
+    shading: true
+    
+    # 是否启用彩色
+    # Enable colorful
+    colorful: true
+    
+    # 颜色更新速度
+    # Color update speed
+    color_update_speed: 10
+
 # 向下滚动的箭头
 # Scroll down arrow
 scroll_down_arrow:

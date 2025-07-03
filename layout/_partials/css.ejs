@@ -14,6 +14,10 @@
 
 <%- css_ex(theme.static_prefix.internal_css, 'main.css') %>
 
+<% if (theme.webgl_fluid_bg && theme.webgl_fluid_bg.enable) { %>
+  <%- css_ex(theme.static_prefix.internal_css, 'fluid-background.css') %>
+<% } %>
+
 <% if (theme.code.highlight.enable) { %>
   <%- css_ex(theme.static_prefix.internal_css, 'highlight.css', 'id="highlight-css"') %>
   <% if (theme.dark_mode.enable) { %>
